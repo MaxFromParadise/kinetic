@@ -10,10 +10,6 @@
 		rel="stylesheet"
 	/>
 	<link
-		href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap"
-		rel="stylesheet"
-	/>
-	<link
 		rel="preload"
 		href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
 		as="style"
@@ -168,7 +164,7 @@
 					<span></span>
 				</div>
 				<div class="nav-header__socials">
-					<a href="#" class="nav-header__telegram">
+					<a aria-label="telegram" href="#" class="nav-header__telegram">
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							width="20"
@@ -181,7 +177,7 @@
 							/>
 						</svg>
 					</a>
-					<a href="#" class="nav-header__whatsapp">
+					<a aria-label="whatsapp" href="#" class="nav-header__whatsapp">
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							width="20"
@@ -628,24 +624,46 @@
 		<div class="saas__decoration"></div>
 	</div>
 </section>
- <section id="cases" class="cases">
+ <section
+	id="cases"
+	class="cases"
+	aria-labelledby="cases-title"
+	aria-describedby="cases-description"
+>
 	<div class="cases__container">
-		<h2 class="title-2 cases__title">Cases</h2>
-		<div class="cases__slider slider-cases swiper">
+		<h2 id="cases-title" class="title-2 cases__title">Cases</h2>
+		<div
+			class="cases__slider slider-cases swiper"
+			aria-live="polite"
+			aria-label="Case study slider"
+		>
 			<div class="slider-cases__wrapper swiper-wrapper">
-				<div class="slider-cases__slide swiper-slide">
+				<div
+					class="slider-cases__slide swiper-slide"
+					aria-labelledby="case-1-title"
+					aria-describedby="case-1-description"
+				>
 					<div class="slider-cases__content">
-						<div class="slider-cases__breadcrumbs">
+						<div class="slider-cases__breadcrumbs" aria-hidden="true">
 							Careers.kaspersky.ru / Защитные решения для дома и бизнеса
 						</div>
-						<h3 class="title-3 slider-cases__title">
+						<h3 id="case-1-title" class="title-3 slider-cases__title">
 							Стратегия привлечение спеиалистов Организоали 700+ откликов на
 							«сложные» IT позиции за 3 месяца
 						</h3>
-						<a href="#" class="button slider-cases__button">Посмотреть кейс</a>
-						<div class="slider-navigation slider-cases__navigation">
+						<a
+							href="#"
+							class="button slider-cases__button"
+							aria-label="View case study for specialists strategy"
+							>Посмотреть кейс</a
+						>
+						<div
+							class="slider-navigation slider-cases__navigation"
+							aria-label="Navigation for case slides"
+						>
 							<button
 								class="slider-navigation__arrow slider-navigation__arrow_prev slider-cases__arrow slider-cases__arrow_prev"
+								aria-label="Previous slide"
 							>
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
@@ -660,11 +678,10 @@
 									/>
 								</svg>
 							</button>
-							<div
-								class="slider-navigation__bullets slider-cases__bullets"
-							></div>
+							<div class="slider-cases__bullets" aria-hidden="true"></div>
 							<button
 								class="slider-navigation__arrow slider-navigation__arrow_next slider-cases__arrow slider-cases__arrow_next"
+								aria-label="Next slide"
 							>
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
@@ -682,22 +699,35 @@
 						</div>
 					</div>
 					<div class="slider-cases__img">
-						<img src="img/cases/slide1.png" alt="cases slide" />
+						<img src="img/cases/slide1.png" alt="case study slide 1" />
 					</div>
 				</div>
-				<div class="slider-cases__slide swiper-slide">
+				<div
+					class="slider-cases__slide swiper-slide"
+					aria-labelledby="case-2-title"
+					aria-describedby="case-2-description"
+				>
 					<div class="slider-cases__content">
-						<div class="slider-cases__breadcrumbs">
+						<div class="slider-cases__breadcrumbs" aria-hidden="true">
 							Careers.kaspersky.ru / Защитные решения для дома и бизнеса
 						</div>
-						<h3 class="title-3 slider-cases__title">
+						<h3 id="case-2-title" class="title-3 slider-cases__title">
 							Стратегия привлечение спеиалистов Организоали 700+ откликов на
 							«сложные» IT позиции за 3 месяца
 						</h3>
-						<a href="#" class="button slider-cases__button">Посмотреть кейс</a>
-						<div class="slider-navigation slider-cases__navigation">
+						<a
+							href="#"
+							class="button slider-cases__button"
+							aria-label="View case study for specialists strategy"
+							>Посмотреть кейс</a
+						>
+						<div
+							class="slider-navigation slider-cases__navigation"
+							aria-label="Navigation for case slides"
+						>
 							<button
 								class="slider-navigation__arrow slider-navigation__arrow_prev slider-cases__arrow slider-cases__arrow_prev"
+								aria-label="Previous slide"
 							>
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
@@ -712,9 +742,10 @@
 									/>
 								</svg>
 							</button>
-							<div class="slider-cases__bullets"></div>
+							<div class="slider-cases__bullets" aria-hidden="true"></div>
 							<button
 								class="slider-navigation__arrow slider-navigation__arrow_next slider-cases__arrow slider-cases__arrow_next"
+								aria-label="Next slide"
 							>
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
@@ -732,22 +763,35 @@
 						</div>
 					</div>
 					<div class="slider-cases__img">
-						<img src="img/cases/slide1.png" alt="cases slide" />
+						<img src="img/cases/slide1.png" alt="case study slide 2" />
 					</div>
 				</div>
-				<div class="slider-cases__slide swiper-slide">
+				<div
+					class="slider-cases__slide swiper-slide"
+					aria-labelledby="case-3-title"
+					aria-describedby="case-3-description"
+				>
 					<div class="slider-cases__content">
-						<div class="slider-cases__breadcrumbs">
+						<div class="slider-cases__breadcrumbs" aria-hidden="true">
 							Careers.kaspersky.ru / Защитные решения для дома и бизнеса
 						</div>
-						<h3 class="title-3 slider-cases__title">
+						<h3 id="case-3-title" class="title-3 slider-cases__title">
 							Стратегия привлечение спеиалистов Организоали 700+ откликов на
 							«сложные» IT позиции за 3 месяца
 						</h3>
-						<a href="#" class="button slider-cases__button">Посмотреть кейс</a>
-						<div class="slider-navigation slider-cases__navigation">
+						<a
+							href="#"
+							class="button slider-cases__button"
+							aria-label="View case study for specialists strategy"
+							>Посмотреть кейс</a
+						>
+						<div
+							class="slider-navigation slider-cases__navigation"
+							aria-label="Navigation for case slides"
+						>
 							<button
 								class="slider-navigation__arrow slider-navigation__arrow_prev slider-cases__arrow slider-cases__arrow_prev"
+								aria-label="Previous slide"
 							>
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
@@ -762,9 +806,10 @@
 									/>
 								</svg>
 							</button>
-							<div class="slider-cases__bullets"></div>
+							<div class="slider-cases__bullets" aria-hidden="true"></div>
 							<button
 								class="slider-navigation__arrow slider-navigation__arrow_next slider-cases__arrow slider-cases__arrow_next"
+								aria-label="Next slide"
 							>
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
@@ -782,7 +827,7 @@
 						</div>
 					</div>
 					<div class="slider-cases__img">
-						<img src="img/cases/slide1.png" alt="cases slide" />
+						<img src="img/cases/slide1.png" alt="case study slide 3" />
 					</div>
 				</div>
 			</div>
@@ -1148,7 +1193,7 @@
 			></a>
 		</div>
 		<form class="footer__newsletters newsletters">
-			<h4 class="title-4 newsletters__title">Newsletters</h4>
+			<div class="title-4 newsletters__title">Newsletters</div>
 			<p class="newsletters__subtitle">Receive it no more than twice a week</p>
 			<input
 				autocomplete="off"
