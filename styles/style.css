@@ -1606,6 +1606,10 @@ address {
     align-items: flex-start;
   }
 
+  .hero__subtitle {
+    font-size: 1.125rem;
+  }
+
   .stats {
     padding: 4.5rem 0;
   }
