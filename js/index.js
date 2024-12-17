@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 	const swiperSaas = new Swiper('.slider-saas', {
+		lazy: true,
 		speed: 1000,
 		spaceBetween: 80,
 		on: {
