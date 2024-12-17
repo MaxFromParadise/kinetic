@@ -1,1 +1,165 @@
-document.addEventListener("DOMContentLoaded",(()=>{new Swiper(".slider-saas",{speed:1e3,spaceBetween:80,on:{init:function(){e(this,".slider-navigation__bullets")},slideChange:function(){t(this,".slider-navigation__bullets")}},autoplay:{delay:8e3},navigation:{nextEl:".slider-saas__arrow_next",prevEl:".slider-saas__arrow_prev"}}),new Swiper(".slider-cases",{speed:1e3,spaceBetween:80,slidesPerView:1,on:{init:function(){e(this,".slider-cases__bullets")},slideChange:function(){t(this,".slider-cases__bullets")}},autoplay:{delay:8e3},navigation:{nextEl:".slider-cases__arrow_next",prevEl:".slider-cases__arrow_prev"}});function e(e,t){e.slides.forEach(((s,n)=>{const i=s.querySelector(t);i&&e.slides.forEach(((t,s)=>{const l=document.createElement("div");l.classList.add("bullet"),s===n&&l.classList.add("active"),l.addEventListener("click",(()=>e.slideTo(s))),i.appendChild(l)}))}))}function t(e,t){e.slides.forEach(((s,n)=>{s.querySelectorAll(`${t} .bullet`).forEach(((t,s)=>{t.classList.toggle("active",s===e.activeIndex)}))}))}const s=document.querySelector(".form"),n=document.querySelectorAll(".form__input");function i(e){return/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e)}function l(e){return/^[+]?\d{3,}$/.test(e)}s.addEventListener("submit",(e=>{e.preventDefault();let t=!0;n.forEach((e=>{const s=e.nextElementSibling;e.value.trim()?(e.classList.remove("error"),s.textContent="",s.style.opacity="0","email"!==e.type||i(e.value)||(e.classList.add("error"),s.textContent="Invalid email format",s.style.opacity="1",t=!1),"number"!==e.name||l(e.value)||(e.classList.add("error"),s.textContent="Invalid phone number",s.style.opacity="1",t=!1)):(e.classList.add("error"),s.textContent="This field is required",s.style.opacity="1",t=!1)})),t&&s.submit()})),n.forEach((e=>{e.addEventListener("input",(()=>{const t=e.nextElementSibling;e.value.trim()&&(e.classList.remove("error"),t.textContent="",t.style.opacity="0","email"!==e.type||i(e.value)||(t.textContent="Invalid email format",t.style.opacity="1"),"number"!==e.name||l(e.value)||(t.textContent="Invalid phone number",t.style.opacity="1"))}))})),document.querySelector(".burger").addEventListener("click",(function(){const e=document.querySelector(".burger"),t=document.querySelector("#menu"),s=document.body;e.classList.toggle("active"),t.classList.toggle("show"),s.classList.toggle("lock")}))}));
+document.addEventListener('DOMContentLoaded', () => {
+	const swiperSaas = new Swiper('.slider-saas', {
+		speed: 1000,
+		spaceBetween: 80,
+		on: {
+			init: function () {
+				createBullets(this, '.slider-navigation__bullets');
+			},
+			slideChange: function () {
+				updateActiveBullet(this, '.slider-navigation__bullets');
+			},
+		},
+		// pagination: {
+		// 	el: '.slider-saas__bullets',
+		// 	clickable: true,
+		// },
+		autoplay: {
+			delay: 8000,
+		},
+		navigation: {
+			nextEl: '.slider-saas__arrow_next',
+			prevEl: '.slider-saas__arrow_prev',
+		},
+	});
+	const swiperCases = new Swiper('.slider-cases', {
+		speed: 1000,
+		spaceBetween: 80,
+		slidesPerView: 1,
+		// pagination: {
+		// 	el: '.slider-saas__bullets',
+		// 	clickable: true,
+		// },
+		on: {
+			init: function () {
+				createBullets(this, '.slider-cases__bullets');
+			},
+			slideChange: function () {
+				updateActiveBullet(this, '.slider-cases__bullets');
+			},
+		},
+		autoplay: {
+			delay: 8000,
+		},
+		navigation: {
+			nextEl: '.slider-cases__arrow_next',
+			prevEl: '.slider-cases__arrow_prev',
+		},
+	});
+	function createBullets(swiper, className) {
+		swiper.slides.forEach((slide, slideIndex) => {
+			const bulletsContainer = slide.querySelector(className);
+			if (bulletsContainer) {
+				swiper.slides.forEach((_, bulletIndex) => {
+					const bullet = document.createElement('div');
+					bullet.classList.add('bullet');
+					if (bulletIndex === slideIndex) bullet.classList.add('active');
+					bullet.addEventListener('click', () => swiper.slideTo(bulletIndex));
+					bulletsContainer.appendChild(bullet);
+				});
+			}
+		});
+	}
+
+	function updateActiveBullet(swiper, className) {
+		swiper.slides.forEach((slide, slideIndex) => {
+			const bullets = slide.querySelectorAll(`${className} .bullet`);
+			bullets.forEach((bullet, bulletIndex) => {
+				bullet.classList.toggle('active', bulletIndex === swiper.activeIndex);
+			});
+		});
+	}
+
+	const form = document.querySelector('.form');
+	const inputs = document.querySelectorAll('.form__input');
+
+	form.addEventListener('submit', (e) => {
+		e.preventDefault();
+
+		let isValid = true;
+
+		inputs.forEach((input) => {
+			const label = input.nextElementSibling;
+
+			if (!input.value.trim()) {
+				input.classList.add('error');
+				label.textContent = 'This field is required';
+				label.style.opacity = '1';
+				isValid = false;
+			} else {
+				input.classList.remove('error');
+				label.textContent = '';
+				label.style.opacity = '0';
+
+				if (input.type === 'email' && !validateEmail(input.value)) {
+					input.classList.add('error');
+					label.textContent = 'Invalid email format';
+					label.style.opacity = '1';
+					isValid = false;
+				}
+
+				if (input.name === 'number' && !validatePhoneNumber(input.value)) {
+					input.classList.add('error');
+					label.textContent = 'Invalid phone number';
+					label.style.opacity = '1';
+					isValid = false;
+				}
+			}
+		});
+
+		if (isValid) {
+			form.submit();
+		}
+	});
+
+	inputs.forEach((input) => {
+		input.addEventListener('input', () => {
+			const label = input.nextElementSibling;
+
+			if (input.value.trim()) {
+				input.classList.remove('error');
+				label.textContent = '';
+				label.style.opacity = '0';
+
+				if (input.type === 'email' && !validateEmail(input.value)) {
+					label.textContent = 'Invalid email format';
+					label.style.opacity = '1';
+				}
+
+				if (input.name === 'number' && !validatePhoneNumber(input.value)) {
+					label.textContent = 'Invalid phone number';
+					label.style.opacity = '1';
+				}
+			}
+		});
+	});
+
+	function validateEmail(email) {
+		const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+		return emailRegex.test(email);
+	}
+
+	function validatePhoneNumber(number) {
+		const phoneRegex = /^[+]?\d{3,}$/;
+		return phoneRegex.test(number);
+	}
+	function toggleMenu() {
+		const burger = document.querySelector('.burger');
+		const menu = document.querySelector('#menu');
+		const body = document.body;
+
+		burger.classList.toggle('active');
+
+		menu.classList.toggle('show');
+		body.classList.toggle('lock');
+	}
+
+	// Привязываем функцию toggleMenu к кнопке burger
+	document.querySelector('.burger').addEventListener('click', toggleMenu);
+});
+document.addEventListener('DOMContentLoaded', () => {
+	const img = document.querySelector('picture img');
+	console.log('Текущее изображение:', img.currentSrc);
+	console.log('Ширина окна:', window.innerWidth);
+	console.log('devicePixelRatio:', window.devicePixelRatio);
+});
