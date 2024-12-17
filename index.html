@@ -32,6 +32,17 @@
 	<body>
 		<div class="menu" id="menu">
 	<div class="menu__container">
+		<div class="menu__top">
+			<div class="menu__logo">
+				<div class="menu__logo_desktop">
+					<img src="img/logo-desktop.svg" alt="logo" />
+				</div>
+				<div class="menu__logo_mobile">
+					<img src="img/logo-menu-mobile.svg" alt="logo menu" />
+				</div>
+			</div>
+			<div class="menu__close">&times;</div>
+		</div>
 		<ul class="menu__list">
 			<li class="menu__item">
 				<a href="#" class="menu__link">SEO</a>
@@ -126,6 +137,9 @@
 			<div class="logo__mobile">
 				<img src="img/logo-mobile.svg" alt="logo" />
 			</div>
+			<div class="logo__mobile_dark">
+				<img src="img/logo-mobile-dark.svg" alt="logo" />
+			</div>
 		</a>
 		<nav class="nav-header">
 			<ul class="nav-header__list">
@@ -181,6 +195,30 @@
 						</svg>
 					</a>
 				</div>
+			</div>
+		</div>
+	</div>
+	<div class="header__progress-bar progress-bar">
+		<div class="progress-bar__line"><span></span></div>
+		<div class="progress-bar__container">
+			<div class="progress-bar__menu">
+				<ul class="progress-bar__list">
+					<li class="progress-bar__item">
+						<a href="#saas" class="progress-bar__link">SAAS</a>
+					</li>
+					<li class="progress-bar__item">
+						<a href="#cases" class="progress-bar__link">CASES</a>
+					</li>
+					<li class="progress-bar__item">
+						<a href="#services" class="progress-bar__link">SERVICES</a>
+					</li>
+					<li class="progress-bar__item">
+						<a href="#audit" class="progress-bar__link">AUDIT</a>
+					</li>
+					<li class="progress-bar__item">
+						<a href="#callback" class="progress-bar__link">CALLBACK</a>
+					</li>
+				</ul>
 			</div>
 		</div>
 	</div>
@@ -374,7 +412,7 @@
 	</div>
 </section>
 
-			<section class="saas">
+			<section id="saas" class="saas">
 	<div class="saas__container">
 		<h2 class="title-2 saas__title">PERFORMIQ for SaaS</h2>
 	</div>
@@ -590,7 +628,7 @@
 		<div class="saas__decoration"></div>
 	</div>
 </section>
- <section class="cases">
+ <section id="cases" class="cases">
 	<div class="cases__container">
 		<h2 class="title-2 cases__title">Cases</h2>
 		<div class="cases__slider slider-cases swiper">
@@ -759,7 +797,7 @@
 	</div>
 </section>
 
-			<section class="services">
+			<section id="services" class="services">
 	<div class="services__container">
 		<h2 class="title-2 services__title">
 			Propelling your business growth with cutting-edge digital marketing tools
@@ -849,7 +887,7 @@
 	</div>
 </section>
 
-			<section class="audit">
+			<section id="audit" class="audit">
 	<div class="audit__container">
 		<div class="audit__content">
 			<h2 class="title-2 audit__title">Detailed audit</h2>
@@ -935,7 +973,7 @@
 	</div>
 </section>
 
-			<section class="contact">
+			<section id="callback" class="contact">
 	<div class="contact__container">
 		<h2 class="title-2 contact__title">
 			Create top-notch emails with the #1 email marketing agency
