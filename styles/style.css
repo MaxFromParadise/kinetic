@@ -693,6 +693,7 @@ address {
   max-width: 50rem;
   margin-left: -4rem;
   margin-right: -4rem;
+  min-height: 25rem;
 }
 
 .slider-saas__img picture {
@@ -1655,6 +1656,10 @@ address {
   .slider-saas__img {
     max-width: 31.25rem;
     width: 100%;
+  }
+
+  .slider-saas__text {
+    font-size: 1.125rem;
   }
 
   .cases__title {
