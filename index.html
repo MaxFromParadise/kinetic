@@ -14,9 +14,17 @@
 		rel="stylesheet"
 	/>
 	<link
-		rel="stylesheet"
+		rel="preload"
 		href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+		as="style"
+		onload="this.rel='stylesheet'"
 	/>
+	<noscript>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+		/>
+	</noscript>
 	<link rel="stylesheet" href="./styles/style.css" />
 	<title>Kinetica</title>
 </head>
